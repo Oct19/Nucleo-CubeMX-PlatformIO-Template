@@ -1,6 +1,6 @@
 # Nucleo-CubeMX-PlatformIO-Template
 
-This is a template project for Nucleo-F446RE (STM32F446RETx)
+This is a template project for Nucleo-F446RE (STM32F446RETx) with FreeRTOS and LED blink
 
 The script (from Reference 1) reads the .project and .cproject file created by STM32Cube and the platformio.ini file to create a build model that can be provided to platformio for building without using the libraries provided by PlatformIO. None of the PlatformIO libraries for CubeMX are used. This should provide a build result comparable to that in STM32CubeIDE.
 
@@ -24,7 +24,7 @@ The script (from Reference 1) reads the .project and .cproject file created by S
 
     a. Select MCU or board
 
-    b. SYS: Debug -> Serial Wire; Timebase Source -> (Any TIMx, not SysTick)
+    b. Configure RCC; SYS: Debug -> Serial Wire; Timebase Source -> (Any TIMx, not SysTick)
 
     c. (Optional) FREERTOS: Interface -> CMSIS_V2; Tasks and Queues -> Add and edit tasks
 
@@ -38,7 +38,7 @@ The script (from Reference 1) reads the .project and .cproject file created by S
 
     f. Toolchain / IDE -> STM32CubeIDE
 
-    g. Code Generator -> Add necessary files as reference in the toolchain project configuration file
+    g. Code Generator -> Add necessary files as reference in the toolchain project configuration file; -> Generate peripheral initialization as a pair of '.c/.h' files per peripheral
 
     h. Generate code
 
@@ -56,9 +56,9 @@ The script (from Reference 1) reads the .project and .cproject file created by S
 
     f. In platformio.ini file, add the following under [env]
 
-        extra_scripts = pre:setup_cubemx_env_auto.py
-        platform_packages = toolchain-gccarmnoneeabi@1.90301.200702
-        lib_deps = STLinkedResources
+       extra_scripts = pre:setup_cubemx_env_auto.py
+       platform_packages = toolchain-gccarmnoneeabi@1.90301.200702
+       lib_deps = STLinkedResources
 
     g. Rename any assembler files having a lower-case '.s' ending to upper-case '.S'.
 
