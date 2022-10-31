@@ -10,9 +10,9 @@ The script (from Reference 1) reads the .project and .cproject file created by S
 
 2. Rename .ioc file -> Same as folder name
 
-3. Use STM32CubeMX or STM32CubeIDE to open the .ioc file and configure. Gnerate code.
+3. Use STM32CubeMX or STM32CubeIDE to open the .ioc file and configure. Gnerate code(required even if name was not changed).
 
-4. Open folder with VSCode. PlatformIO extension should recognize this folder
+4. Open folder with VSCode (For Windows, open with Admin Rights, or Turn on Windows Developer mode). PlatformIO extension should recognize this folder
 
 5. Modify code between  `/* USER CODE BEGIN */` and `/* USER CODE END */`
 
@@ -42,7 +42,7 @@ The script (from Reference 1) reads the .project and .cproject file created by S
 
     h. Generate code
 
-2. Open folder with VSCode. Use PlatformIO extension to Create New Project
+2. Open folder with VSCode (For Windows, open with Admin Rights, or Turn on Windows Developer mode). Use PlatformIO extension to Create New Project
 
     a. Project Name -> Same as folder name
 
